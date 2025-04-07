@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "description": {{ product.description | strip_html | truncatewords: 120 | strip | json }},
+    "url": {{ request.origin | append: product.url | json }},
+    "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    {% if product.featured_image %}
+    "image": [
+      {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}
+    ],
+    {% endif %}
+    "brand": {
+      "@type": "Brand",
+      "name": {{ product.vendor | json }}
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": {{ cart.currency.iso_code | json }},
+      "price": {{ product.selected_or_first_available_variant.price | money_without_currency | strip_html | json }},
+      "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+      "url": {{ request.origin | append: product.url | append: '?variant=' | append: product.selected_or_first_available_variant.id | json }}
+    }
+    {% if product.metafields.reviews.rating.value != blank %}
+    ,"aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ product.metafields.reviews.rating.value | json }},
+      "reviewCount": {{ product.metafields.reviews.rating_count.value | json }}
+    }
+    {% endif %}
+  }
+</script>

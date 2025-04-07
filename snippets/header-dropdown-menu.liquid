@@ -5,7 +5,7 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-<nav class="header__inline-menu">
+<nav class="header__inline-menu" aria-label="Main navigation">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
@@ -15,6 +15,10 @@
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
+                aria-haspopup="menu"
+                aria-expanded="false"
+                aria-controls="HeaderMenu-MenuList-{{ forloop.index }}"
+                role="button"
               >
                 <span
                   {%- if link.child_active %}
@@ -23,16 +27,17 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                <span class="icon-dropdown">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
               </summary>
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
                 class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
-                role="list"
+                role="menu"
+                aria-labelledby="HeaderMenu-{{ link.handle }}"
                 tabindex="-1"
               >
                 {%- for childlink in link.links -%}
-                  <li>
+                  <li role="none">
                     {%- if childlink.links == blank -%}
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
@@ -41,6 +46,7 @@
                         {% if childlink.current %}
                           aria-current="page"
                         {% endif %}
+                        role="menuitem"
                       >
                         {{ childlink.title | escape }}
                       </a>
@@ -49,16 +55,22 @@
                         <summary
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                           class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                          aria-haspopup="menu"
+                          aria-expanded="false"
+                          aria-controls="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}"
+                          role="menuitem"
                         >
                           <span>{{ childlink.title | escape }}</span>
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                          <span class="icon-dropdown">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
                         </summary>
                         <ul
-                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}"
                           class="header__submenu list-menu motion-reduce"
+                          role="menu"
+                          aria-labelledby="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         >
                           {%- for grandchildlink in childlink.links -%}
-                            <li>
+                            <li role="none">
                               <a
                                 id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                                 href="{{ grandchildlink.url }}"
@@ -66,6 +78,7 @@
                                 {% if grandchildlink.current %}
                                   aria-current="page"
                                 {% endif %}
+                                role="menuitem"
                               >
                                 {{ grandchildlink.title | escape }}
                               </a>
