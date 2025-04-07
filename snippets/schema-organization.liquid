@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ shop.name }}",
+    "url": "{{ shop.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ settings.logo | image_url | prepend: 'https:' | json }},
+      "width": {{ settings.logo_width | json }},
+      "height": {{ settings.logo_width | divided_by: settings.logo.aspect_ratio | round | json }}
+    },
+    "sameAs": [
+      {% if settings.social_twitter_link != blank %}"{{ settings.social_twitter_link }}",{% endif %}
+      {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
+      {% if settings.social_pinterest_link != blank %}"{{ settings.social_pinterest_link }}",{% endif %}
+      {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
+      {% if settings.social_youtube_link != blank %}"{{ settings.social_youtube_link }}",{% endif %}
+      {% if settings.social_tiktok_link != blank %}"{{ settings.social_tiktok_link }}"{% endif %}
+    ],
+    "description": "{{ shop.description | escape }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ settings.address | default: '123 Rainforest Way' }}",
+      "addressLocality": "{{ settings.city | default: 'Los Angeles' }}",
+      "addressRegion": "{{ settings.state | default: 'CA' }}",
+      "postalCode": "{{ settings.zip_code | default: '90000' }}",
+      "addressCountry": "{{ settings.country | default: 'US' }}"
+    },
+    "telephone": "{{ settings.phone_number | default: '+1-800-PLANTS' }}",
+    "email": "{{ settings.contact_email | default: 'info@rainforestflora.com' }}"
+  }
+</script>

@@ -24,13 +24,24 @@
 
     {% if page_description %}
       {% if template == 'list-collections' %}
-        <meta name="description" content="Explore Rainforest Flora’s collection of unique air plants, staghorn ferns, and tropical plants. Shop premium Tillandsia species and plant care essentials for enthusiasts and collectors alike. Find vibrant, easy-to-grow plants perfect for indoor or outdoor environments.">
+        <meta
+          name="description"
+          content="Explore Rainforest Flora's collection of unique air plants, staghorn ferns, and tropical plants. Shop premium Tillandsia species and plant care essentials for enthusiasts and collectors alike. Find vibrant, easy-to-grow plants perfect for indoor or outdoor environments."
+        >
       {% else %}
         <meta name="description" content="{{ page_description | escape }}">
       {% endif %}
     {% endif %}
 
     {% render 'meta-tags' %}
+
+    <!-- Structured Data Schema Markup -->
+    {% render 'schema-organization' %}
+    {% if template == 'product' %}
+      {% render 'schema-product' %}
+    {% endif %}
+    {% render 'schema-breadcrumbs' %}
+    <!-- End Structured Data Schema Markup -->
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
@@ -376,6 +387,6 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  {{'tiny-img-link-preloader.js' | asset_url | script_tag }}
-</body>
+    {{ 'tiny-img-link-preloader.js' | asset_url | script_tag }}
+  </body>
 </html>

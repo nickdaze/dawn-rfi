@@ -28,9 +28,11 @@
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
+      role="region"
+      aria-label="Product purchase options"
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
-        <span class="svg-wrapper">
+        <span class="svg-wrapper" aria-hidden="true">
           {{- 'icon-error.svg' | inline_asset_content -}}
         </span>
         <span class="product-form__error-message"></span>
@@ -80,6 +82,9 @@
               or product.selected_or_first_available_variant == null
             %}
               disabled
+              aria-disabled="true"
+            {% else %}
+              aria-label="Add {{ product.title | escape }} to your cart"
             {% endif %}
           >
             <span>
@@ -100,13 +105,14 @@
       {%- endform -%}
     </product-form>
   {%- else -%}
-    <div class="product-form">
+    <div class="product-form" role="region" aria-label="Product purchase options">
       <div class="product-form__buttons form">
         <button
           type="submit"
           name="add"
           class="product-form__submit button button--full-width button--primary"
           disabled
+          aria-disabled="true"
         >
           {{ 'products.product.sold_out' | t }}
         </button>
@@ -130,15 +136,20 @@
       data-variant-id="{{ product.selected_or_first_available_variant.id }}"
       data-has-only-default-variant="{{ product.has_only_default_variant }}"
       data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}"
+      role="region"
+      aria-label="Store pickup availability"
     >
       <template>
         <pickup-availability-preview class="pickup-availability-preview">
-          <span class="svg-wrapper">
+          <span class="svg-wrapper" aria-hidden="true">
             {{- 'icon-unavailable.svg' | inline_asset_content -}}
           </span>
           <div class="pickup-availability-info">
             <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
-            <button class="pickup-availability-button link link--text underlined-link">
+            <button
+              class="pickup-availability-button link link--text underlined-link"
+              aria-label="Refresh store pickup availability"
+            >
               {{ 'products.product.pickup_availability.refresh' | t }}
             </button>
           </div>
