@@ -17,9 +17,9 @@
       assign collections = collections | reverse
     endif
 
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
+    assign modulo_result = 28 | modulo: section.settings.columns_desktop
     assign paginate_by = 30
-    if moduloResult == 0
+    if modulo_result == 0
       assign paginate_by = 28
     endif
   -%}
@@ -29,19 +29,21 @@
       role="list"
     >
       {%- for collection in collections -%}
-        <li
-          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {% render 'card-collection',
-            card_collection: collection,
-            media_aspect_ratio: section.settings.image_ratio,
-            columns: 3
-          %}
-        </li>
+        {%- if collection.title != 'Great airplant accessories' -%}
+          <li
+            class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {% render 'card-collection',
+              card_collection: collection,
+              media_aspect_ratio: section.settings.image_ratio,
+              columns: 3
+            %}
+          </li>
+        {%- endif -%}
       {%- endfor -%}
     </ul>
     {% render 'pagination', paginate: paginate %}
