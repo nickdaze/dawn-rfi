@@ -1,53 +1,53 @@
 {
-  "name": "t:sections.footer.name",
-  "type": "footer",
-  "sections": {
-    "footer": {
-      "type": "footer",
-      "blocks": {
-        "footer-0": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
-          }
+    "name": "t:sections.footer.name",
+    "type": "footer",
+    "sections": {
+        "17260759966379a24f": {
+            "type": "apps",
+            "settings": {
+                "include_margins": true
+            }
         },
-        "footer-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Info",
-            "menu": "footer"
-          }
+        "custom_liquid_3ENeVi": {
+            "type": "custom-liquid",
+            "custom_css": [
+                ".footer-links {padding: 2rem; display: grid; max-width: 1200px; margin: 0 auto;}",
+                ".footer-links .col ul {list-style: none; padding: 0;}",
+                ".footer-links .col ul li a {padding-left: 2rem; color: #748671; text-decoration: underline;}",
+                ".grid-cols-1 {grid-template-columns: repeat(1, minmax(0, 1fr));}",
+                ".grid-cols-3 {grid-template-columns: repeat(3, minmax(0, 1fr));}",
+                ".gap-4 {gap: 1rem;}",
+                ".gap-8 {gap: 2rem;}",
+                "@media (min-width: 768px) {.md\\:grid-cols-3 {grid-template-columns: repeat(3, minmax(0, 1fr)); } .md\\:gap-8 {gap: 2rem; }}"
+            ],
+            "settings": {
+                "custom_liquid": "<div class=\"footer-links grid-cols-1 md:grid-cols-3 gap-4 md:gap-8\">\n    <div class=\"col\">\n        <ul>\n            <li><b>Plant care guides</b></li>\n            <ul>\n                <li><a href=\"/pages/tillandsia-care-guide\">Airplant (Tillandsia) care guide</a></li>\n                <li><a href=\"/pages/platycerium-care-guide\">Staghorn fern (Platycerium) care guide</a></li>\n                <li><a href=\"/pages/neoregelia-care-guide\">Neoregelia (Bromeliads) care guide</a></li>\n            </ul>\n        </ul>\n    </div>\n    <div class=\"col\">\n        <ul>\n            <li><b>Product varieties</b></li>\n            <ul>\n                <li><a href=\"/collections/airplants-tillandsia\">Airplants (Tillandsia)</a></li>\n                <li><a href=\"/collections/staghorn-fern-collection\">Staghorn ferns (Platycerium)</a></li>\n                <li><a href=\"/collections/spanish-moss-collection\">Spanish moss (Tillandsia)</a></li>\n                <li><a href=\"/collections/neoregelia-collection\">Neoregelias (Bromeliads)</a></li>\n                <li><a href=\"/collections/accessories\">Plant care products</a></li>\n            </ul>\n        </ul>\n    </div>\n    <div class=\"col\">\n        <ul>\n            <li><b>Collections</b></li>\n            <ul>\n                <li><a href=\"/collections/exclusive-hybrid-bromeliads-by-rainforest-flora\">Exclusive hybrids by Rainforest Flora</a></li>\n                <li><a href=\"/collections/airplant-beginners-collection\">Airplant beginners' collection</a></li>\n                <li><a href=\"/collections/mark-dimmitt-collection\">The Mark Dimmitt collection</a></li>\n            </ul>\n        </ul>\n    </div>\n</div>",
+                "color_scheme": "",
+                "padding_top": 0,
+                "padding_bottom": 0
+            }
         },
-        "footer-2": {
-          "type": "text",
-          "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
-          }
+        "footer": {
+            "type": "footer",
+            "settings": {
+                "color_scheme": "scheme-1",
+                "newsletter_enable": false,
+                "newsletter_heading": "Subscribe to our emails",
+                "enable_follow_on_shop": true,
+                "show_social": true,
+                "enable_country_selector": false,
+                "enable_language_selector": false,
+                "payment_enable": false,
+                "show_policy": true,
+                "margin_top": 40,
+                "padding_top": 40,
+                "padding_bottom": 40
+            }
         }
-      },
-      "block_order": [
-        "footer-0",
-        "footer-1",
-        "footer-2"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "payment_enable": true,
-        "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    }
-  },
-  "order": [
-    "footer"
-  ]
+    },
+    "order": [
+        "17260759966379a24f",
+        "custom_liquid_3ENeVi",
+        "footer"
+    ]
 }
