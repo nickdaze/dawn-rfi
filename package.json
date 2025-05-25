@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@shopify/cli": "^3.80.7"
+  }
+}
