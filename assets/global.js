@@ -56,15 +56,41 @@ class HTMLUpdateUtility {
 
   // Sets inner HTML and reinjects the script tags to allow execution. By default, scripts are disabled when using element.innerHTML.
   static setInnerHTML(element, html) {
-    element.innerHTML = html;
-    element.querySelectorAll('script').forEach((oldScriptTag) => {
-      const newScriptTag = document.createElement('script');
-      Array.from(oldScriptTag.attributes).forEach((attribute) => {
-        newScriptTag.setAttribute(attribute.name, attribute.value);
+    // Create a temporary container to parse the HTML
+    const temp = document.createElement('template');
+    temp.innerHTML = html;
+    
+    // Clear the target element
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+    
+    // Clone and append all nodes from the template
+    const fragment = temp.content.cloneNode(true);
+    
+    // Process scripts separately for security
+    const scripts = fragment.querySelectorAll('script');
+    scripts.forEach((script) => {
+      // Only allow scripts from trusted sources (same origin or Shopify CDN)
+      const src = script.getAttribute('src');
+      if (src && !src.startsWith('/') && !src.includes('cdn.shopify.com')) {
+        console.warn('Blocked external script:', src);
+        script.remove();
+        return;
+      }
+      
+      // Re-create script element to ensure execution
+      const newScript = document.createElement('script');
+      Array.from(script.attributes).forEach((attr) => {
+        newScript.setAttribute(attr.name, attr.value);
       });
-      newScriptTag.appendChild(document.createTextNode(oldScriptTag.innerHTML));
-      oldScriptTag.parentNode.replaceChild(newScriptTag, oldScriptTag);
+      if (script.textContent) {
+        newScript.textContent = script.textContent;
+      }
+      script.parentNode.replaceChild(newScript, script);
     });
+    
+    element.appendChild(fragment);
   }
 }
 
