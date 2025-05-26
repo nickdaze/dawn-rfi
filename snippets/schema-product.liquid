@@ -18,15 +18,15 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": {{ cart.currency.iso_code | json }},
-      "price": {{ product.selected_or_first_available_variant.price | money_without_currency | strip_html | json }},
+      "price": {{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' }},
       "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
       "url": {{ request.origin | append: product.url | append: '?variant=' | append: product.selected_or_first_available_variant.id | json }}
     }
     {% if product.metafields.reviews.rating.value != blank %}
     ,"aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": {{ product.metafields.reviews.rating.value | json }},
-      "reviewCount": {{ product.metafields.reviews.rating_count.value | json }}
+      "ratingValue": {{ product.metafields.reviews.rating.value | default: 0 }},
+      "reviewCount": {{ product.metafields.reviews.rating_count.value | default: 0 }}
     }
     {% endif %}
   }

@@ -727,52 +727,44 @@
       </script>
     -->
 
-    <!-- New code test for Google Search Console. -->
+    <!-- Fixed structured data for Google Search Console -->
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Product",
-        "name": "{{ product.title | escape }}",
-        "image": "{{ product.featured_image | product_image_url }}",
-        "description": "{{ product.description | strip_html }}",
-        "sku": "{{ product.selected_or_first_available_variant.sku }}",
+        "name": {{ product.title | json }},
+        {% if product.featured_image %}
+        "image": [
+          "{{ product.featured_image | image_url: width: 1200 }}"
+        ],
+        {% endif %}
+        "description": {{ product.description | strip_html | json }},
+        {% if product.selected_or_first_available_variant.sku != blank %}
+        "sku": {{ product.selected_or_first_available_variant.sku | json }},
+        {% endif %}
         "mpn": "{{ product.id }}",
         "brand": {
           "@type": "Brand",
-          "name": "{{ shop.name }}"
+          "name": {{ shop.name | json }}
         },
         "offers": {
           "@type": "Offer",
           "url": "{{ shop.url }}{{ product.url }}",
           "priceCurrency": "{{ shop.currency }}",
-          "price": "{{ product.price | divided_by: 100 }}",
-          "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}"
-        },
-        {% if product.metafields.reviews.rating_count > 0 %}
-        "aggregateRating": {
+          "price": {{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' }},
+          "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
+        }
+        {% if product.metafields.reviews.rating_count.value and product.metafields.reviews.rating_count.value > 0 %}
+        ,"aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "{{ product.metafields.reviews.rating.value }}",
-          "reviewCount": "{{ product.metafields.reviews.rating_count }}"
-        },
+          "ratingValue": {{ product.metafields.reviews.rating.value | default: 0 }},
+          "reviewCount": {{ product.metafields.reviews.rating_count.value | default: 0 }}
+        }
         {% endif %}
-        "review": [
-          {
-            "@type": "Review",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "{{ product.metafields.reviews.rating.value | default: '4' }}",
-              "bestRating": "5"
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Verified Buyer"
-            }
-          }
-        ]
       }
     </script>
-    <!-- END New code test for Google Search Console. -->
+    <!-- END Fixed structured data for Google Search Console -->
   </div>
 </product-info>
 

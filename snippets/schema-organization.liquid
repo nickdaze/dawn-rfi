@@ -2,32 +2,47 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "{{ shop.name }}",
-    "url": "{{ shop.url }}",
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }},
+    {% if settings.logo %}
     "logo": {
       "@type": "ImageObject",
       "url": {{ settings.logo | image_url | prepend: 'https:' | json }},
-      "width": {{ settings.logo_width | json }},
-      "height": {{ settings.logo_width | divided_by: settings.logo.aspect_ratio | round | json }}
+      "width": {{ settings.logo_width | default: 250 }},
+      "height": {{ settings.logo_width | default: 250 | divided_by: settings.logo.aspect_ratio | round }}
     },
-    "sameAs": [
-      {% if settings.social_twitter_link != blank %}"{{ settings.social_twitter_link }}",{% endif %}
-      {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
-      {% if settings.social_pinterest_link != blank %}"{{ settings.social_pinterest_link }}",{% endif %}
-      {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
-      {% if settings.social_youtube_link != blank %}"{{ settings.social_youtube_link }}",{% endif %}
-      {% if settings.social_tiktok_link != blank %}"{{ settings.social_tiktok_link }}"{% endif %}
-    ],
-    "description": "{{ shop.description | escape }}",
+    {% endif %}
+    {% assign social_links = '' %}
+    {% if settings.social_twitter_link != blank %}
+      {% assign social_links = social_links | append: settings.social_twitter_link | json | append: ',' %}
+    {% endif %}
+    {% if settings.social_facebook_link != blank %}
+      {% assign social_links = social_links | append: settings.social_facebook_link | json | append: ',' %}
+    {% endif %}
+    {% if settings.social_pinterest_link != blank %}
+      {% assign social_links = social_links | append: settings.social_pinterest_link | json | append: ',' %}
+    {% endif %}
+    {% if settings.social_instagram_link != blank %}
+      {% assign social_links = social_links | append: settings.social_instagram_link | json | append: ',' %}
+    {% endif %}
+    {% if settings.social_youtube_link != blank %}
+      {% assign social_links = social_links | append: settings.social_youtube_link | json | append: ',' %}
+    {% endif %}
+    {% if settings.social_tiktok_link != blank %}
+      {% assign social_links = social_links | append: settings.social_tiktok_link | json | append: ',' %}
+    {% endif %}
+    {% assign social_links = social_links | remove_last: ',' %}
+    "sameAs": [{{ social_links }}],
+    "description": {{ shop.description | json }},
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "{{ settings.address | default: '123 Rainforest Way' }}",
-      "addressLocality": "{{ settings.city | default: 'Los Angeles' }}",
-      "addressRegion": "{{ settings.state | default: 'CA' }}",
-      "postalCode": "{{ settings.zip_code | default: '90000' }}",
-      "addressCountry": "{{ settings.country | default: 'US' }}"
+      "streetAddress": {{ settings.address | default: '123 Rainforest Way' | json }},
+      "addressLocality": {{ settings.city | default: 'Los Angeles' | json }},
+      "addressRegion": {{ settings.state | default: 'CA' | json }},
+      "postalCode": {{ settings.zip_code | default: '90000' | json }},
+      "addressCountry": {{ settings.country | default: 'US' | json }}
     },
-    "telephone": "{{ settings.phone_number | default: '+1-800-PLANTS' }}",
-    "email": "{{ settings.contact_email | default: 'info@rainforestflora.com' }}"
+    "telephone": {{ settings.phone_number | default: '+1-800-PLANTS' | json }},
+    "email": {{ settings.contact_email | default: 'info@rainforestflora.com' | json }}
   }
 </script>
