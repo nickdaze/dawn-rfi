@@ -3,7 +3,7 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 <!-- Added the below asset for infinite scroll. - ND Aug 21, 2024 -->
-{{ 'ajaxinate-min.min.js' | asset_url | script_tag }}
+<script src="{{ 'ajaxinate-min.min.js' | asset_url }}" defer="defer"></script>
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}

@@ -571,9 +571,10 @@
                                 {% endif %}
                               >
                                 <ul class="list-unstyled" role="list">
+                                  {%- assign offset_value = forloop.index0 | times: block.settings.products_per_page -%}
                                   {%- for product in recommendations.products
                                     limit: block.settings.products_per_page
-                                    offset: continue
+                                    offset: offset_value
                                   -%}
                                     <li>
                                       {%- if block.settings.enable_quick_add -%}

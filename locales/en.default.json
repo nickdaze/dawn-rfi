@@ -506,7 +506,8 @@
       "copy_code": "Copy gift card code",
       "expiration_date": "Expires {{ expires_on }}",
       "copy_code_success": "Code copied successfully",
-      "expired": "Expired"
+      "expired": "Expired",
+      "gift_card_illustration": "Gift card illustration"
     }
   },
   "recipient": {
