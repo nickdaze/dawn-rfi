@@ -87,11 +87,10 @@
     },
     "featured_collection_X9QHkG": {
       "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "accessories",
         "products_to_show": 3,
-        "title": "Featured collection",
+        "title": "Great airplant accessories",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
