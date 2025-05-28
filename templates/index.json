@@ -85,13 +85,13 @@
         "padding_bottom": 40
       }
     },
-    "featured_collection_VUHkTG": {
+    "featured_collection_X9QHkG": {
       "type": "featured-collection",
-      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "great-airplant-accessories",
+        "collection": "accessories",
         "products_to_show": 3,
-        "title": "Great airplant accessories",
+        "title": "Featured collection",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -106,12 +106,12 @@
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "none",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_with_text_pkT7fz": {
@@ -284,7 +284,7 @@
   "order": [
     "image_banner",
     "featured_collection_ngWYjH",
-    "featured_collection_VUHkTG",
+    "featured_collection_X9QHkG",
     "image_with_text_pkT7fz",
     "multicolumn_GfCT8K",
     "featured_collection_gigGUw",
