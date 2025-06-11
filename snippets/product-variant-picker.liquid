@@ -1,182 +1,96 @@
 {% comment %}
-  Renders product variant with color swatches, pills, or dropdown as well as inventory status
+  Renders product variant-picker
 
   Accepts:
   - product: {Object} product object.
   - block: {Object} passing the block information.
-  - product_form_id: {String} product form id.
-  - option_position: {Integer} check if the option is in first, second or third position.
-  - section_id: {String} id of section to which this snippet belongs.
-  - update_url: {Boolean} whether to update url when changing dropdown or pills variant. If true - updates the url, false - does not update.
-  - secondary: {Boolean} (optional) if this is a secondary variant picker.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
 
   Usage:
-  {% render 'product-variant-picker', product: product, block: block, section_id: section_id %}
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
-
 {%- unless product.has_only_default_variant -%}
-  {%- if block.settings.picker_type == 'dropdown' -%}
-    <variant-selects
-      id="variant-selects-{{ section_id }}"
-      class="no-js-hidden"
-      data-section="{{ section_id }}"
-      data-product="{{ product.id }}"
-      data-url="{{ product.url }}"
-      {% if update_url %}
-        data-update-url
-      {% endif %}
-      {{ block.shopify_attributes }}
-      role="group"
-      aria-label="Product variant options"
-    >
-      {%- for option in product.options_with_values -%}
-        {% if option_position != blank and option_position != forloop.index %}
-          {% continue %}
-        {% endif %}
-        <div class="product-form__input product-form__input--dropdown">
-          <p id="Option-{{ section_id }}-{{ forloop.index0 }}-label" class="form__label">
-            {{ option.name }}
-            <span>:</span>
-            <span id="Option-{{ section_id }}-{{ forloop.index0 }}-selected" class="selected-option">
-              {{ option.selected_value }}
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign picker_type = block.settings.picker_type
+
+        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+          if block.settings.picker_type == 'dropdown'
+            assign picker_type = 'swatch_dropdown'
+          else
+            assign picker_type = 'swatch'
+          endif
+        endif
+      -%}
+      {%- if picker_type == 'swatch' -%}
+        <fieldset class="js product-form__input product-form__input--swatch">
+          <legend class="form__label">
+            {{ option.name }}:
+            <span data-selected-value>
+              {{- option.selected_value -}}
             </span>
-          </p>
+          </legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {%- elsif picker_type == 'button' -%}
+        <fieldset class="js product-form__input product-form__input--pill">
+          <legend class="form__label">{{ option.name }}</legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {%- else -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+
           <div class="select">
+            {%- if picker_type == 'swatch_dropdown' -%}
+              <span
+                data-selected-value
+                class="dropdown-swatch"
+              >
+                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+              </span>
+            {%- endif -%}
             <select
-              id="Option-{{ section_id }}-{{ forloop.index0 }}"
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
               class="select__select"
               name="options[{{ option.name | escape }}]"
               form="{{ product_form_id }}"
-              data-option-position="{{ forloop.index }}"
-              aria-required="true"
-              aria-labelledby="Option-{{ section_id }}-{{ forloop.index0 }}-label"
             >
-              {% for value in option.values %}
-                <option
-                  value="{{ value | escape }}"
-                  {% if value == option.selected_value %}
-                    selected="selected"
-                  {% endif %}
-                >
-                  {{ value | escape }}
-                </option>
-              {% endfor %}
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
             </select>
-            <span class="icon-dropdown" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
           </div>
         </div>
-      {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
 
-      <script type="application/json">
-        {{ product.variants | json }}
-      </script>
-    </variant-selects>
-  {%- elsif block.settings.picker_type == 'pill' -%}
-    <variant-radios
-      id="variant-radios-{{ section_id }}"
-      class="no-js-hidden"
-      data-section="{{ section_id }}"
-      data-product="{{ product.id }}"
-      data-url="{{ product.url }}"
-      {% if update_url %}
-        data-update-url
-      {% endif %}
-      {{ block.shopify_attributes }}
-      role="radiogroup"
-      aria-label="Product variant options"
-    >
-      {%- for option in product.options_with_values -%}
-        {% if option_position != blank and option_position != forloop.index %}
-          {% continue %}
-        {% endif %}
-
-        {% if option.name == 'Color' %}
-          {% assign is_color = true %}
-        {% else %}
-          {% assign is_color = false %}
-        {% endif %}
-
-        {% assign downcased_option = option.name | downcase %}
-        {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
-          {% assign is_color = true %}
-        {% endif %}
-
-        <fieldset class="js product-form__input product-form__input--{% if is_color %}swatch{% else %}pill{% endif %}">
-          <legend class="form__label">
-            {{ option.name }}
-            <span>:</span>
-            <span id="Option-{{ section_id }}-{{ forloop.index0 }}-selected" class="selected-option">
-              {{ option.selected_value }}
-            </span>
-          </legend>
-          <div class="grid">
-            {%- for value in option.values -%}
-              {% if is_color %}
-                {% assign selected_value_by_object = option.selected_value | escape | upcase %}
-                {% assign value_by_object = value | escape | upcase %}
-                {% assign pill_image_name = value_by_object %}
-              {% endif %}
-              <div
-                class="grid__item js {% if is_color %}product-form__swatch js{% endif %}{% if option.selected_value == value %} active selected{% endif %}"
-                {% if is_color %}
-                  data-swatch="{{ pill_image_name }}"
-                {% endif %}
-              >
-                <label
-                  for="Option-{{ section_id }}-{{ forloop.parent.index0 }}-{{ value | escape }}"
-                  class="pill"
-                  {% if is_color %}
-                    data-swatch-label
-                    data-swatch="{{ pill_image_name }}"
-                  {% endif %}
-                >
-                  <input
-                    type="radio"
-                    {% if option.selected_value == value %}
-                      checked
-                    {% endif %}
-                    {% if is_color %}
-                      data-swatch-input
-                    {% endif %}
-                    name="options[{{ option.name | escape }}]"
-                    value="{{ value | escape }}"
-                    form="{{ product_form_id }}"
-                    id="Option-{{ section_id }}-{{ forloop.parent.index0 }}-{{ value | escape }}"
-                    data-option-position="{{ forloop.parent.index }}"
-                    aria-label="{{ value | escape }}"
-                    aria-required="true"
-                    aria-describedby="Option-{{ section_id }}-{{ forloop.parent.index0 }}-selected"
-                  >
-                  <div class="pill__text">{{ value }}</div>
-                  {% if is_color and value_by_object == selected_value_by_object %}
-                    <div class="pill__tick">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                        focusable="false"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                    </div>
-                  {% endif %}
-                </label>
-              </div>
-            {%- endfor -%}
-          </div>
-        </fieldset>
-      {%- endfor -%}
-
-      <script type="application/json">
-        {{ product.variants | json }}
-      </script>
-    </variant-radios>
-  {%- endif -%}
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
 {%- endunless -%}
