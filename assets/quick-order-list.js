@@ -190,7 +190,7 @@ if (!customElements.get('quick-order-list')) {
             this.initEventListeners();
           })
           .catch((e) => {
-            console.error(e);
+            // console.error(e);
           });
       }
 
@@ -349,7 +349,7 @@ if (!customElements.get('quick-order-list')) {
             });
           })
           .catch((e) => {
-            console.error(e);
+            // console.error(e);
             this.setErrorMessage(window.cartStrings.error);
           })
           .finally(() => {

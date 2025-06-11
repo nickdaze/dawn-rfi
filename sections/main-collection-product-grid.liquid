@@ -199,9 +199,13 @@
 </div>
 
 <script>
-  const endlessCollection = new Ajaxinate({
-    container: '#product-grid',
-    pagination: '.infinite_next',
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Ajaxinate !== 'undefined') {
+      const endlessCollection = new Ajaxinate({
+        container: '#product-grid',
+        pagination: '.infinite_next',
+      });
+    }
   });
 </script>
 
