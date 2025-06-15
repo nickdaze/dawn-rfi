@@ -135,6 +135,7 @@
         "heading_T3y49m",
         "text_HKz7TA"
       ],
+      "disabled": true,
       "custom_css": [
         ".image-with-text__content {background: var(--White, #fff); box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.04), 0px 30.147px 24.118px 0px rgba(0, 0, 0, 0.03), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.02), 0px 4.529px 3.623px 0px rgba(0, 0, 0, 0.01);}"
       ],
