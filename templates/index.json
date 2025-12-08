@@ -60,9 +60,9 @@
     "featured_collection_ngWYjH": {
       "type": "featured-collection",
       "settings": {
-        "collection": "airplant-beginners-collection",
+        "collection": "featured-products",
         "products_to_show": 6,
-        "title": "Airplants for beginners",
+        "title": "Featured Products",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
