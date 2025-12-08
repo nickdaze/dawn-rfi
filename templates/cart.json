@@ -24,6 +24,54 @@
         "include_margins": true
       }
     },
+    "image_with_text_g47izB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_AHWMQ7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hey!",
+            "heading_size": "h1"
+          }
+        },
+        "text_BRcbat": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We recommend adding a heat pack to your order if you are located in an area with low or freezing temperatures. The heat packs add a 72h window to help the plants through the shipping process.<br/><br/></p>",
+            "text_style": "body"
+          }
+        },
+        "button_9KaVcR": {
+          "type": "button",
+          "settings": {
+            "button_label": "Heat Pack",
+            "button_link": "shopify://products/heat-pack",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AHWMQ7",
+        "text_BRcbat",
+        "button_9KaVcR"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/72-hour-heat-pack-plant-protection-for-cold-weather-shipping-119658.jpg",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
@@ -57,6 +105,7 @@
   },
   "order": [
     "173843194685563d60",
+    "image_with_text_g47izB",
     "cart-items",
     "cart-footer"
   ]
