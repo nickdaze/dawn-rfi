@@ -61,7 +61,7 @@
       "type": "featured-collection",
       "settings": {
         "collection": "featured-products",
-        "products_to_show": 6,
+        "products_to_show": 9,
         "title": "Featured Products",
         "heading_size": "h1",
         "description": "",
