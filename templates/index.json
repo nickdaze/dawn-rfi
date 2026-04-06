@@ -85,6 +85,23 @@
         "padding_bottom": 40
       }
     },
+    "1775498656a70c6d99": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "contact_form_nPgNVp": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "heading": "Interested in Wholesale? Contact Us!",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_X9QHkG": {
       "type": "featured-collection",
       "settings": {
@@ -267,6 +284,8 @@
   "order": [
     "image_banner",
     "featured_collection_ngWYjH",
+    "1775498656a70c6d99",
+    "contact_form_nPgNVp",
     "featured_collection_X9QHkG",
     "image_with_text_pkT7fz",
     "multicolumn_GfCT8K",
