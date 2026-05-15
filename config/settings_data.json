@@ -182,6 +182,13 @@
           "using_translated_handles": false,
           "custom_script_and_style": "<script></script>\n<style></style>"
         }
+      },
+      "11584191888897549880": {
+        "type": "shopify://apps/vsi-variants-shared-inventory/blocks/app-embed/2ea56464-2f27-4440-8c48-228fd02fa97d",
+        "disabled": false,
+        "settings": {
+          "out_of_stock_text": "Sold out"
+        }
       }
     },
     "color_schemes": {
