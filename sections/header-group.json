@@ -36,9 +36,8 @@
       "blocks": {
         "announcement_jD389j": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Free shipping on orders of $75 or more.",
+            "text": "Enjoy 15% off storewide this Memorial Day weekend from 5/23/26 to 5/25/26",
             "link": ""
           }
         }
