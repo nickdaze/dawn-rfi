@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "快速订单列表"
       }
+    },
+    "disclosures": {
+      "name": "披露信息",
+      "settings": {
+        "paragraph": {
+          "content": "此产品所需的安全警告和监管披露信息。"
+        },
+        "heading": {
+          "label": "标题"
+        },
+        "open_by_default": {
+          "label": "默认展开"
+        }
+      }
     }
   }
 }

@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Schnelle Bestellliste"
       }
+    },
+    "disclosures": {
+      "name": "Pflichtangaben",
+      "settings": {
+        "paragraph": {
+          "content": "Erforderliche Sicherheitshinweise und gesetzliche Pflichtangaben für dieses Produkt."
+        },
+        "heading": {
+          "label": "Überschrift"
+        },
+        "open_by_default": {
+          "label": "Standardmäßig geöffnet"
+        }
+      }
     }
   }
 }

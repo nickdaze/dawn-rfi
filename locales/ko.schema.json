@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "빠른 주문 목록"
       }
+    },
+    "disclosures": {
+      "name": "고지 사항",
+      "settings": {
+        "paragraph": {
+          "content": "이 제품에 필수적인 안전 경고 및 규제 관련 고지 사항입니다."
+        },
+        "heading": {
+          "label": "제목"
+        },
+        "open_by_default": {
+          "label": "기본으로 열기"
+        }
+      }
     }
   }
 }

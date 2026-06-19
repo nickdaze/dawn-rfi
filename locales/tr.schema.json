@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Hızlı sipariş listesi"
       }
+    },
+    "disclosures": {
+      "name": "Bildirimler",
+      "settings": {
+        "paragraph": {
+          "content": "Bu ürün için zorunlu güvenlik uyarıları ve yasal bildirimler."
+        },
+        "heading": {
+          "label": "Başlık"
+        },
+        "open_by_default": {
+          "label": "Varsayılan olarak açık"
+        }
+      }
     }
   }
 }

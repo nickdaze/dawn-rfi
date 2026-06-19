@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Seznam pro rychlé objednávky"
       }
+    },
+    "disclosures": {
+      "name": "Prohlášení",
+      "settings": {
+        "paragraph": {
+          "content": "Povinná bezpečnostní varování a zákonná prohlášení pro tento produkt."
+        },
+        "heading": {
+          "label": "Nadpis"
+        },
+        "open_by_default": {
+          "label": "Otevřeno ve výchozím stavu"
+        }
+      }
     }
   }
 }

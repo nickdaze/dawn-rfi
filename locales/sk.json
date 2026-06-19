@@ -302,6 +302,8 @@
       "note": "Špeciálne pokyny k objednávke",
       "checkout": "Platba",
       "empty": "Váš košík je prázdny",
+      "product_disclosure": "Zverejnená informácia o produkte",
+      "product_disclosures": "Zverejnené informácie o produkte",
       "cart_error": "Pri aktualizácii košíka sa vyskytla chyba. Skúste to znova.",
       "cart_quantity_error_html": "Do košíka môžete túto položku pridať len v počte {{ quantity }}.",
       "update": "Aktualizovať",

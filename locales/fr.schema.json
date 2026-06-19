@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Liste rapide des commandes"
       }
+    },
+    "disclosures": {
+      "name": "Divulgations",
+      "settings": {
+        "paragraph": {
+          "content": "Avertissements de sécurité obligatoires et informations réglementaires pour ce produit."
+        },
+        "heading": {
+          "label": "Titre"
+        },
+        "open_by_default": {
+          "label": "Ouvert par défaut"
+        }
+      }
     }
   }
 }

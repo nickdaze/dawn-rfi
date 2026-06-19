@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Pikatilausluettelo"
       }
+    },
+    "disclosures": {
+      "name": "Ilmoitukset",
+      "settings": {
+        "paragraph": {
+          "content": "Tämän tuotteen pakolliset turvallisuusvaroitukset ja säädösten edellyttämät ilmoitukset."
+        },
+        "heading": {
+          "label": "Otsikko"
+        },
+        "open_by_default": {
+          "label": "Avoinna oletuksena"
+        }
+      }
     }
   }
 }

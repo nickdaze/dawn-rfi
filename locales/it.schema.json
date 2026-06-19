@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Elenco ordini rapido"
       }
+    },
+    "disclosures": {
+      "name": "Informative",
+      "settings": {
+        "paragraph": {
+          "content": "Avvertenze di sicurezza e informative normative obbligatorie per questo prodotto."
+        },
+        "heading": {
+          "label": "Titolo"
+        },
+        "open_by_default": {
+          "label": "Aperto per impostazione predefinita"
+        }
+      }
     }
   }
 }

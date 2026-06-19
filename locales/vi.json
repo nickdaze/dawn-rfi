@@ -282,6 +282,8 @@
       "note": "Hướng dẫn đặc biệt của đơn hàng",
       "checkout": "Thanh toán",
       "empty": "Giỏ hàng của bạn đang trống",
+      "product_disclosure": "Thông tin công bố sản phẩm",
+      "product_disclosures": "Thông tin công bố sản phẩm",
       "cart_error": "Đã xảy ra lỗi khi cập nhật giỏ hàng. Vui lòng thử lại.",
       "cart_quantity_error_html": "Bạn chỉ có thể thêm {{ quantity }} mặt hàng này vào giỏ hàng.",
       "headings": {
