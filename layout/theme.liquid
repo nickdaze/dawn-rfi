@@ -22,16 +22,35 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    {% if page_description %}
-      {% if template == 'list-collections' %}
-        <meta
-          name="description"
-          content="Explore Rainforest Flora's collection of unique air plants, staghorn ferns, and tropical plants. Shop premium Tillandsia species and plant care essentials for enthusiasts and collectors alike. Find vibrant, easy-to-grow plants perfect for indoor or outdoor environments."
-        >
-      {% else %}
-        <meta name="description" content="{{ page_description | escape }}">
-      {% endif %}
-    {% endif %}
+    {%- liquid
+      # rf-customization: robust meta description. Fall back per page type when no
+      # SEO description is set (e.g. collections), and cap length so search and
+      # social listings don't truncate mid-sentence.
+      assign meta_description = page_description
+      if meta_description == blank
+        case request.page_type
+          when 'list-collections'
+            assign meta_description = 'Explore Rainforest Flora: unique air plants, staghorn ferns, and tropical plants. Shop premium Tillandsia species and plant care essentials for collectors.'
+          when 'collection'
+            assign meta_description = collection.description
+            if meta_description == blank
+              assign meta_description = collection.title | append: ': shop airplants, tillandsias, staghorn ferns and plant care essentials at Rainforest Flora.'
+            endif
+          when 'product'
+            assign meta_description = product.description
+          when 'page'
+            assign meta_description = page.content
+          when 'article'
+            assign meta_description = article.excerpt_or_content
+          else
+            assign meta_description = shop.description | default: shop.name
+        endcase
+      endif
+      assign meta_description = meta_description | strip_html | strip_newlines | strip | truncate: 160, '…'
+    -%}
+    {%- if meta_description != blank -%}
+      <meta name="description" content="{{ meta_description | escape }}">
+    {%- endif -%}
 
     {% render 'meta-tags' %}
 
