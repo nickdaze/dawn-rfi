@@ -130,7 +130,8 @@
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> ks v košíku",
         "note": "Zobrazenie pravidiel týkajúcich sa množstva",
         "min_of": "Min. {{ quantity }}",
-        "max_of": "Max. {{ quantity }}"
+        "max_of": "Max. {{ quantity }}",
+        "in_cart_aria_label": "Počet ({{ quantity }} v košíku)"
       },
       "price": {
         "from_price_html": "Od {{ price }}",
@@ -157,6 +158,7 @@
         "load_video": "Prehrať video {{ index }} v zobrazení galérie",
         "image_available": "Obrázok {{ index }} je teraz dostupný v zobrazení galérie"
       },
+      "nested_label": "{{ title }} pre {{ parent_title }}",
       "view_full_details": "Zobraziť všetky podrobnosti",
       "shipping_policy_html": "<a href=\"{{ link }}\">Doprava</a> sa vypočíta pri platbe.",
       "choose_options": "Vybrať možnosti",
@@ -300,6 +302,8 @@
       "note": "Špeciálne pokyny k objednávke",
       "checkout": "Platba",
       "empty": "Váš košík je prázdny",
+      "product_disclosure": "Zverejnená informácia o produkte",
+      "product_disclosures": "Zverejnené informácie o produkte",
       "cart_error": "Pri aktualizácii košíka sa vyskytla chyba. Skúste to znova.",
       "cart_quantity_error_html": "Do košíka môžete túto položku pridať len v počte {{ quantity }}.",
       "update": "Aktualizovať",

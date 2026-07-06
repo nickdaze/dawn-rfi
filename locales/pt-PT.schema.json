@@ -902,7 +902,7 @@
           "content": "Utilitários"
         },
         "enable_follow_on_shop": {
-          "label": "Seguir no Shop",
+          "label": "Seguir na Shop",
           "info": "O Shop Pay tem de ser ativado. [Saber mais](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
         }
       }
@@ -3395,6 +3395,20 @@
       },
       "presets": {
         "name": "Lista de encomendas rápida"
+      }
+    },
+    "disclosures": {
+      "name": "Divulgações",
+      "settings": {
+        "paragraph": {
+          "content": "Avisos de segurança e divulgações regulamentares obrigatórios para este produto."
+        },
+        "heading": {
+          "label": "Título"
+        },
+        "open_by_default": {
+          "label": "Aberto por predefinição"
+        }
       }
     }
   }

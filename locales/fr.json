@@ -122,7 +122,8 @@
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> dans le panier",
         "note": "Voir les règles de quantité",
         "min_of": "Min. {{ quantity }}",
-        "max_of": "Max. {{ quantity }}"
+        "max_of": "Max. {{ quantity }}",
+        "in_cart_aria_label": "Quantité ({{ quantity }} dans le panier)"
       },
       "price": {
         "from_price_html": "À partir de {{ price }}",
@@ -156,6 +157,7 @@
         "load_video": "Lire la vidéo {{ index }} dans la galerie",
         "image_available": "L'image {{ index }} est maintenant disponible dans la galerie"
       },
+      "nested_label": "{{ title }} pour {{ parent_title }}",
       "view_full_details": "Afficher tous les détails",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
       "choose_options": "Choisir des options",
@@ -290,6 +292,8 @@
       "note": "Instructions spéciales concernant la commande",
       "checkout": "Procéder au paiement",
       "empty": "Votre panier est vide",
+      "product_disclosure": "Information sur le produit",
+      "product_disclosures": "Informations sur le produit",
       "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Veuillez réessayer.",
       "cart_quantity_error_html": "Vous ne pouvez pas ajouter plus de {{ quantity }} de ce produit à votre panier.",
       "headings": {
@@ -454,7 +458,7 @@
       "order_number_link": "Numéro de commande {{ number }}",
       "date": "Date",
       "payment_status": "Statut des paiements",
-      "fulfillment_status": "Statut des commandes",
+      "fulfillment_status": "Statut du traitement de la commande",
       "total": "Total",
       "none": "Vous n'avez encore passé aucune commande."
     },
@@ -486,7 +490,7 @@
       "billing_address": "Adresse de facturation",
       "payment_status": "Statut de paiement",
       "shipping_address": "Adresse d'expédition",
-      "fulfillment_status": "Statut des commandes",
+      "fulfillment_status": "Statut du traitement de la commande",
       "discount": "Réduction",
       "shipping": "Expédition",
       "tax": "Taxes",

@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Collapsible content"
       }
+    },
+    "disclosures": {
+      "name": "Disclosures",
+      "settings": {
+        "paragraph": {
+          "content": "Required safety warnings and regulatory disclosures for this product."
+        },
+        "heading": {
+          "label": "Heading"
+        },
+        "open_by_default": {
+          "label": "Open by default"
+        }
+      }
     }
   }
 }

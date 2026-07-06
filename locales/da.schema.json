@@ -3167,7 +3167,7 @@
     "main-login": {
       "name": "Login",
       "shop_login_button": {
-        "enable": "Aktiver log ind med shop"
+        "enable": "Aktivér Log ind med shop"
       }
     },
     "main-order": {
@@ -3395,6 +3395,20 @@
       },
       "presets": {
         "name": "Hurtig ordreliste"
+      }
+    },
+    "disclosures": {
+      "name": "Oplysninger",
+      "settings": {
+        "paragraph": {
+          "content": "Obligatoriske sikkerhedsadvarsler og lovpligtige oplysninger for dette produkt."
+        },
+        "heading": {
+          "label": "Overskrift"
+        },
+        "open_by_default": {
+          "label": "Åben som standard"
+        }
       }
     }
   }

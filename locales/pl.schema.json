@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Lista szybkich zamówień"
       }
+    },
+    "disclosures": {
+      "name": "Informacje prawne",
+      "settings": {
+        "paragraph": {
+          "content": "Wymagane ostrzeżenia dotyczące bezpieczeństwa i informacje prawne dla tego produktu."
+        },
+        "heading": {
+          "label": "Nagłówek"
+        },
+        "open_by_default": {
+          "label": "Domyślnie otwarte"
+        }
+      }
     }
   }
 }

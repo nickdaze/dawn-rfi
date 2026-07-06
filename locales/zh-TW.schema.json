@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "快速訂單清單"
       }
+    },
+    "disclosures": {
+      "name": "資訊揭露",
+      "settings": {
+        "paragraph": {
+          "content": "此商品必備的安全警告與法規資訊揭露。"
+        },
+        "heading": {
+          "label": "標題"
+        },
+        "open_by_default": {
+          "label": "預設為開啟"
+        }
+      }
     }
   }
 }

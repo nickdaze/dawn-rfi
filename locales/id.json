@@ -121,7 +121,8 @@
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> di keranjang",
         "note": "Lihat aturan kuantitas",
         "min_of": "Min. {{ quantity }}",
-        "max_of": "Maks. {{ quantity }}"
+        "max_of": "Maks. {{ quantity }}",
+        "in_cart_aria_label": "Jumlah ({{ quantity }} di keranjang)"
       },
       "price": {
         "from_price_html": "Dari {{ price }}",
@@ -155,6 +156,7 @@
         "load_video": "Putar video {{ index }} di tampilan galeri",
         "image_available": "Gambar {{ index }} kini tersedia di tampilan galeri"
       },
+      "nested_label": "{{ title }} untuk {{ parent_title }}",
       "view_full_details": "Lihat detail lengkap",
       "shipping_policy_html": "<a href=\"{{ link }}\">Biaya pengiriman</a> dihitung saat checkout.",
       "choose_options": "Pilih opsi",
@@ -280,6 +282,8 @@
       "note": "Instruksi khusus pesanan",
       "checkout": "Check out",
       "empty": "Keranjang Anda kosong",
+      "product_disclosure": "Pengungkapan produk",
+      "product_disclosures": "Pengungkapan produk",
       "cart_error": "Terjadi kesalahan saat memperbarui keranjang. Silakan coba lagi.",
       "cart_quantity_error_html": "Hanya dapat menambahkan {{ quantity }} item ini ke keranjang Anda.",
       "headings": {
@@ -499,7 +503,7 @@
       "subtext": "Voucher Anda",
       "gift_card_code": "Kode voucher",
       "shop_link": "Kunjungi toko online",
-      "add_to_apple_wallet": "Tambahkan ke Apple Wallet",
+      "add_to_apple_wallet": "Tambahkan ke Dompet Apple",
       "qr_image_alt": "Kode QR — pindai untuk menukarkan voucher",
       "copy_code": "Salin kode voucher",
       "expired": "Kedaluwarsa",

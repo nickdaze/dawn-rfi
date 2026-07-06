@@ -3167,7 +3167,7 @@
     "main-login": {
       "name": "登录",
       "shop_login_button": {
-        "enable": "启用使用 Shop 登录"
+        "enable": "启用“使用 Shop 登录”"
       }
     },
     "main-order": {
@@ -3395,6 +3395,20 @@
       },
       "presets": {
         "name": "快速订单列表"
+      }
+    },
+    "disclosures": {
+      "name": "披露信息",
+      "settings": {
+        "paragraph": {
+          "content": "此产品所需的安全警告和监管披露信息。"
+        },
+        "heading": {
+          "label": "标题"
+        },
+        "open_by_default": {
+          "label": "默认展开"
+        }
       }
     }
   }

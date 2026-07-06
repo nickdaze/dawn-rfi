@@ -3396,6 +3396,20 @@
       "presets": {
         "name": "Hurtigordreliste"
       }
+    },
+    "disclosures": {
+      "name": "Opplysninger",
+      "settings": {
+        "paragraph": {
+          "content": "Obligatoriske sikkerhetsadvarsler og lovpålagte opplysninger for dette produktet."
+        },
+        "heading": {
+          "label": "Overskrift"
+        },
+        "open_by_default": {
+          "label": "Åpen som standard"
+        }
+      }
     }
   }
 }

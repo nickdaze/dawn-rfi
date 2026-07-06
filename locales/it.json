@@ -130,7 +130,8 @@
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> nel carrello",
         "note": "Visualizza regole sulla quantità",
         "min_of": "Min {{ quantity }}",
-        "max_of": "Max {{ quantity }}"
+        "max_of": "Max {{ quantity }}",
+        "in_cart_aria_label": "Quantità ({{ quantity }} nel carrello)"
       },
       "price": {
         "from_price_html": "Da {{ price }}",
@@ -164,6 +165,7 @@
         "load_video": "Riproduci video {{ index }} in visualizzazione galleria",
         "image_available": "L'immagine {{ index }} è ora disponibile in visualizzazione galleria"
       },
+      "nested_label": "{{ title }} per {{ parent_title }}",
       "view_full_details": "Visualizza dettagli completi",
       "shipping_policy_html": "<a href=\"{{ link }}\">Spese di spedizione</a> calcolate al check-out.",
       "choose_options": "Scegli opzioni",
@@ -299,6 +301,8 @@
       "note": "Istruzioni speciali per l'ordine",
       "checkout": "Check-out",
       "empty": "Il tuo carrello è vuoto",
+      "product_disclosure": "Informativa sul prodotto",
+      "product_disclosures": "Informative sul prodotto",
       "cart_error": "Si è verificato un errore durante l'aggiornamento del carrello. Riprova più tardi.",
       "cart_quantity_error_html": "Puoi aggiungere soltanto {{ quantity }} di questo articolo al tuo carrello.",
       "headings": {
@@ -372,7 +376,7 @@
       "each": "{{ money }}/ciascuno",
       "product": "Prodotto",
       "variant": "Variante",
-      "variant_total": "Totale varianti",
+      "variant_total": "Totale variante",
       "items_added": {
         "one": "{{ quantity }} articolo aggiunto",
         "other": "{{ quantity }} articoli aggiunti",
