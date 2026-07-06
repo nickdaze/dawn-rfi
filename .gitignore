@@ -22,3 +22,7 @@ test-lighthouse.sh
 
 # Internal-linking rollback dumps (local only, contain full product descriptions)
 scripts/rollback-internal-links-*.json
+
+# Separate Shopify app project scaffolded inside this repo by accident — ignore.
+# (Consider moving it out to its own directory.)
+/seo-content-drafting/
