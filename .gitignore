@@ -13,3 +13,9 @@ run-lighthouse.sh
 test-lighthouse.sh
 /lighthouse-reports
 *.zip
+.gstack/
+
+# Local secrets — NEVER commit. Add real values only to .env (ignored below).
+.env
+.env.*
+!.env.example
