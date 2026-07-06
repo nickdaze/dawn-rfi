@@ -738,50 +738,13 @@
         <script src="{{ 'product-model.js' | asset_url }}" defer></script>
       {%- endif -%}
 
-      <!--
-        Default Dawn structured data is replaced by the fixed block below to
-        resolve Google Search Console "Incorrect value type" errors. See
-        STRUCTURED_DATA_FIXES.md. (rf-customization, re-applied for Dawn 15.5)
-        {{ product | structured_data }}
-      -->
-
-      <!-- Fixed structured data for Google Search Console -->
-      <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": {{ product.title | json }},
-          {% if product.featured_image %}
-          "image": [
-            "{{ product.featured_image | image_url: width: 1200 }}"
-          ],
-          {% endif %}
-          "description": {{ product.description | strip_html | json }},
-          {% if product.selected_or_first_available_variant.sku != blank %}
-          "sku": {{ product.selected_or_first_available_variant.sku | json }},
-          {% endif %}
-          "mpn": "{{ product.id }}",
-          "brand": {
-            "@type": "Brand",
-            "name": {{ shop.name | json }}
-          },
-          "offers": {
-            "@type": "Offer",
-            "url": "{{ shop.url }}{{ product.url }}",
-            "priceCurrency": "{{ shop.currency }}",
-            "price": {{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' }},
-            "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
-          }
-          {% if product.metafields.reviews.rating_count.value and product.metafields.reviews.rating_count.value > 0 %}
-          ,"aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": {{ product.metafields.reviews.rating.value | default: 0 }},
-            "reviewCount": {{ product.metafields.reviews.rating_count.value | default: 0 }}
-          }
-          {% endif %}
-        }
-      </script>
-      <!-- END Fixed structured data for Google Search Console -->
+      {% comment %}
+        Product structured data (JSON-LD) is rendered globally via
+        snippets/schema-product.liquid (from layout/theme.liquid on product
+        templates). Do NOT add an inline Product schema here — it duplicates the
+        snippet and triggers Google Search Console duplicate warnings. See
+        STRUCTURED_DATA_FIXES.md. (rf-customization)
+      {% endcomment %}
     </div>
   </product-component>
 </product-info>
