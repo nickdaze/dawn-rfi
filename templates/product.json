@@ -59,7 +59,7 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "buy_buttons": {
+        "buy_buttons_mLwNEH": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
@@ -84,7 +84,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
+        "buy_buttons_mLwNEH",
         "share",
         "description"
       ],
