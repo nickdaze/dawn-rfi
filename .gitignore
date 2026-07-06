@@ -19,3 +19,6 @@ test-lighthouse.sh
 .env
 .env.*
 !.env.example
+
+# Internal-linking rollback dumps (local only, contain full product descriptions)
+scripts/rollback-internal-links-*.json
