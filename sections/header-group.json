@@ -37,7 +37,7 @@
         "announcement_jD389j": {
           "type": "announcement",
           "settings": {
-            "text": "Our phones are currently down. Please email us at sale@rainforestflora.com for any questions. Thank you for your understanding.",
+            "text": "Our phones are currently down. Please email us at sales@rainforestflora.com for any questions. Thank you for your understanding.",
             "link": ""
           }
         }
@@ -45,6 +45,7 @@
       "block_order": [
         "announcement_jD389j"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
