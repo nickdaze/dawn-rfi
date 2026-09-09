@@ -36,6 +36,7 @@
       "blocks": {
         "announcement_jD389j": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Labor day weekend SALE! Enjoy $20 off $100 or more. Enjoy!",
             "link": ""
