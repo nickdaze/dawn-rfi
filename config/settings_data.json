@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/Artboard_9_4x_7735d552-2796-4de0-9cad-58486b592b85.png",
+    "logo": "shopify://shop_images/rainforest-flora-logo-since-1976.png",
     "logo_width": 180,
     "favicon": "shopify://shop_images/RF_Avatar_4x_c9276777-476d-4569-bb22-74f230d4fc3e.png",
     "type_header_font": "cooper_bt_n5",
@@ -166,8 +166,6 @@
         "settings": {
           "greeting_message": "",
           "button_color": "#000000",
-          "secondary_color": "#FFFFFF",
-          "ternary_color": "#6A6A6A",
           "button_icon": "chat_bubble",
           "button_text": "need_help",
           "button_horizontal_position": "bottom_right",
@@ -181,13 +179,6 @@
           "dealeasy_public_access_token": "82ca25b0c8e37a2d91479b12969bf5cb",
           "using_translated_handles": false,
           "custom_script_and_style": "<script></script>\n<style></style>"
-        }
-      },
-      "11584191888897549880": {
-        "type": "shopify://apps/vsi-variants-shared-inventory/blocks/app-embed/2ea56464-2f27-4440-8c48-228fd02fa97d",
-        "disabled": true,
-        "settings": {
-          "out_of_stock_text": "Sold out"
         }
       }
     },
