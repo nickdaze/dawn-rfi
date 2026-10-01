@@ -14,7 +14,6 @@
       "blocks": {
         "slide_WXpR3n": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Jerry_and_Paul.jpg",
             "image_overlay_opacity": 0,
@@ -33,16 +32,70 @@
         },
         "slide_XeYNWK": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Scan_20261001_130650.jpg",
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_E3rC9G": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Scan_20261001_125847.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_6MFfdi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/20261001_130440.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_geW8zb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/20261001_124927.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -52,9 +105,11 @@
       },
       "block_order": [
         "slide_WXpR3n",
-        "slide_XeYNWK"
+        "slide_XeYNWK",
+        "slide_E3rC9G",
+        "slide_6MFfdi",
+        "slide_geW8zb"
       ],
-      "disabled": true,
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "grid",
