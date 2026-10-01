@@ -14,6 +14,7 @@
       "blocks": {
         "slide_WXpR3n": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Jerry_and_Paul.jpg",
             "image_overlay_opacity": 0,
@@ -32,6 +33,7 @@
         },
         "slide_XeYNWK": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_overlay_opacity": 0,
             "heading": "Image slide",
