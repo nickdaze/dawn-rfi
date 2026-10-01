@@ -327,6 +327,7 @@
         "text_aKbK3e",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/rf-hero-img_b556a537-4760-4a34-b6ca-51227731c112.jpg",
         "image_overlay_opacity": 30,
