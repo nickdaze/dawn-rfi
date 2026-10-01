@@ -52,6 +52,7 @@
         "slide_WXpR3n",
         "slide_XeYNWK"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "grid",
