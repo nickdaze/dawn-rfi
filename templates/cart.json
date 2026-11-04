@@ -9,6 +9,49 @@
  */
 {
   "sections": {
+    "rich_text_PibRaq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_peHW7r": {
+          "type": "heading",
+          "settings": {
+            "heading": "Prop 65 Warning",
+            "heading_size": "h2"
+          }
+        },
+        "text_jNWqe8": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>WARNING [Cancer and Reproductive Harm]:</strong> Can expose you to <strong>Perchloroethylene</strong> and <strong>Thiophanate-methyl</strong>. <a href=\"http://www.p65warnings.ca.gov/\" target=\"_blank\">www.P65Warnings.ca.gov</a>&nbsp;</h6><h6>No Glue: &nbsp;<strong>WARNING [Reproductive Harm]:</strong> Can expose you to <strong>Thiophanate-methyl</strong>. <a href=\"http://www.p65warnings.ca.gov/\" target=\"_blank\">www.P65Warnings.ca.gov</a>&nbsp;</h6><h6>Glued: &nbsp;<strong>WARNING [Cancer and Reproductive Harm]:</strong> Can expose you to <strong>Perchloroethylene</strong> and <strong>Thiophanate-methyl</strong>. <a href=\"http://www.p65warnings.ca.gov/\" target=\"_blank\">www.P65Warnings.ca.gov</a></h6>"
+          }
+        },
+        "button_jzC3qc": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_peHW7r",
+        "text_jNWqe8",
+        "button_jzC3qc"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "173843194685563d60": {
       "type": "apps",
       "blocks": {
@@ -30,14 +73,14 @@
         "heading_AHWMQ7": {
           "type": "heading",
           "settings": {
-            "heading": "Hey!",
+            "heading": "Cold Weather Warning",
             "heading_size": "h1"
           }
         },
         "text_BRcbat": {
           "type": "text",
           "settings": {
-            "text": "<p>We recommend adding a heat pack to your order if you are located in an area with low or freezing temperatures. The heat packs add a 72h window to help the plants through the shipping process.<br/><br/></p>",
+            "text": "<p>We recommend adding a heat pack to your order if you are located in an area with low or freezing temperatures. The heat packs add a 72h window to help the plants through the shipping process. Orders for out of state shipping placed Wednesday - Sunday will ship the following week.<br/><br/></p>",
             "text_style": "body"
           }
         },
@@ -107,6 +150,7 @@
     "173843194685563d60",
     "image_with_text_g47izB",
     "cart-items",
-    "cart-footer"
+    "cart-footer",
+    "rich_text_PibRaq"
   ]
 }
