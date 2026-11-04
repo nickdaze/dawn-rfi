@@ -93,6 +93,7 @@
     },
     "contact_form_nPgNVp": {
       "type": "contact-form",
+      "disabled": true,
       "name": "t:sections.contact-form.presets.name",
       "settings": {
         "heading": "Interested in Wholesale? Contact Us!",
@@ -242,6 +243,7 @@
     },
     "featured_collection_gigGUw": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "exclusive-hybrid-bromeliads-by-rainforest-flora",
         "products_to_show": 6,
