@@ -107,6 +107,7 @@
       "blocks": {
         "heading_peHW7r": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Prop 65 Warning",
             "heading_size": "h2"
