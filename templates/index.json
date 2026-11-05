@@ -70,6 +70,7 @@
         },
         "text_zyRfHb": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Our mission is to grow plants that bring joy to our customers. We have airplants for sale, tropical outdoor plants, staghorn ferns, and many other houseplants and outdoor plants for sale online and at our showroom.",
             "text_style": "body"
