@@ -43,9 +43,57 @@
         "text_aKbK3e",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/rf-hero-img_b556a537-4760-4a34-b6ca-51227731c112.jpg",
-        "image_2": "shopify://shop_images/IMG_3190.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "image_banner_DDcz9z": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_xYxRVn": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Bring the rainforest home.</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_zyRfHb": {
+          "type": "text",
+          "settings": {
+            "text": "Our mission is to grow plants that bring joy to our customers. We have airplants for sale, tropical outdoor plants, staghorn ferns, and many other houseplants and outdoor plants for sale online and at our showroom.",
+            "text_style": "body"
+          }
+        },
+        "buttons_wDX3Jd": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop the Collection",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_xYxRVn",
+        "text_zyRfHb",
+        "buttons_wDX3Jd"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_3190.jpg",
         "image_overlay_opacity": 30,
         "image_height": "large",
         "image_behavior": "none",
@@ -286,6 +334,7 @@
   },
   "order": [
     "image_banner",
+    "image_banner_DDcz9z",
     "featured_collection_ngWYjH",
     "1775498656a70c6d99",
     "contact_form_nPgNVp",
