@@ -70,7 +70,6 @@
         },
         "text_zyRfHb": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "Our mission is to grow plants that bring joy to our customers. We have airplants for sale, tropical outdoor plants, staghorn ferns, and many other houseplants and outdoor plants for sale online and at our showroom.",
             "text_style": "body"
@@ -105,6 +104,38 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "rich_text_xfMEXR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kjAY3J": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_hdDadH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kjAY3J",
+        "text_hdDadH"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "featured_collection_ngWYjH": {
@@ -336,6 +367,7 @@
   "order": [
     "image_banner",
     "image_banner_DDcz9z",
+    "rich_text_xfMEXR",
     "featured_collection_ngWYjH",
     "1775498656a70c6d99",
     "contact_form_nPgNVp",
