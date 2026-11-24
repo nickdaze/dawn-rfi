@@ -37,17 +37,26 @@
         "announcement_jD389j": {
           "type": "announcement",
           "settings": {
-            "text": "25% OFF Thanksgiving Sale 11/23-11/29 on EVERYTHING (discount applied at checkout) & Heat Packs Available For Cold Climates",
+            "text": "25% OFF Thanksgiving Sale 11/23-11/29 on EVERYTHING (discount applied at checkout)",
             "link": ""
+          }
+        },
+        "announcement_VJqcJi": {
+          "type": "announcement",
+          "settings": {
+            "text": "Cold Weather Advisory - Heat Packs Available For Shipments",
+            "link": "shopify://products/heat-pack"
           }
         }
       },
       "block_order": [
-        "announcement_jD389j"
+        "announcement_jD389j",
+        "announcement_VJqcJi"
       ],
+      "custom_css": [],
       "settings": {
         "auto_rotate": false,
-        "change_slides_speed": 5,
+        "change_slides_speed": 6,
         "color_scheme": "scheme-0982495b-0f1f-4786-9581-487803db91c4",
         "show_line_separator": true,
         "show_social": false,
